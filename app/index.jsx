@@ -7,17 +7,18 @@ import SpeedClock from "../components/SpeedClock.jsx";
 import SpeedSlider from "../components/SpeedSlider.jsx";
 import TurnButton from "../components/TurnButton.jsx";
 export default function ControlScreen() {
+  const IP = "192.168.199.41";
   const [speed, setSpeed] = useState(0);
   const handleSpeed = async (val, status) => {
     setSpeed(val);
     try {
       //const respone = await axios(`http://${IP}/led`,)
-      const respone = await axios.post(`http://192.168.199.41/control`, {
+      const respone = await axios.post(`http://${IP}/control`, {
         control: "f"
       });
       console.log("Đã gửi lệnh điều khiển");
       //const respone1 = await axios(`http://${IP}/led`,)
-      const response1 = await axios.post(`http://192.168.199.41/speed`, {
+      const response1 = await axios.post(`http://${IP}/speed`, {
         speed: val
       }, {
         headers: {
@@ -28,7 +29,7 @@ export default function ControlScreen() {
       console.error("Error sending speed command:", error);
     };
     if (val === 0) {
-      const respone = await axios.post(`http://192.168.199.41/control`, {
+      const respone = await axios.post(`http://${IP}/control`, {
         control: "s"
       });
     }
@@ -39,7 +40,7 @@ export default function ControlScreen() {
    const handleStop = async () => {
       try {
       //const respone = await axios(`http://${IP}/led`,)
-      const respone = await axios.post(`http://192.168.199.41/control`, {
+      const respone = await axios.post(`http://${IP}/control`, {
         control: "s"
       });
       console.log("Đã gửi lệnh điều khiển");
@@ -65,7 +66,7 @@ export default function ControlScreen() {
           <SpeedSlider onSpeedChange={handleSpeed}  />
         </View>
         <View style={{ flex: 1, justifyContent: "flex-end" }}>
-          <BackwardButton />
+          <BackwardButton IP={IP}/>
         </View>
       </View>
 
@@ -82,7 +83,7 @@ export default function ControlScreen() {
 
       <View style={{ flex: 1 }}>
         <View style={{ flex: 1, alignItems: "center" }}>
-          <LightButton />
+          <LightButton IP={IP} />
         </View>
         <View
           style={{
@@ -90,7 +91,7 @@ export default function ControlScreen() {
             justifyContent: "space-between",
           }}
         >
-          <TurnButton />
+          <TurnButton IP = {IP}/>
         </View>
       </View>
     </View>

@@ -1,13 +1,13 @@
 import axios from "axios";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-export default function ackwardButton({ onCommand }) {
+export default function ackwardButton({ IP }) {
   const handleControl = async (status) =>{
     try {
       // const response = await axios.post(`http://${IP}/control`,{
-        const response = await axios.post(`http://192.168.199.41/control`,{
+        const response = await axios.post(`http://${IP}/control`,{
         control: status
       });
-        const response1 = await axios.post(`http://192.168.199.41/speed`, {
+        const response1 = await axios.post(`http://${IP}/speed`, {
         speed:70
       }, {
         headers: {

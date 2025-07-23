@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-export default function LightButton({ onCommand }) {
+export default function LightButton({ IP }) {
     const [ledOn, setLedOn] = useState(false); // mặc định LED đang tắt
     const handleLed = async () => {
         const newStatus = ledOn ? 0 : 1;
 
         try {
-        await axios.post(`http://192.168.199.41/led`, {
+        await axios.post(`http://${IP}/led`, {
             led: newStatus,
         });
         setLedOn(!ledOn); // cập nhật trạng thái
