@@ -1,0 +1,34 @@
+.cameraContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .cameraStream {
+    width: 100%;
+    max-width: 640px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: scaleY(-1);
+    }
+  }
+
+  .clockContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .speedValue {
+      font-size: 48px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  }
+}

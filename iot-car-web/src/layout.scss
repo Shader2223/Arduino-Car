@@ -1,0 +1,27 @@
+@import "./App.scss";
+
+.layout {
+  background-color: white;
+  height: 100vh;
+  max-width: 1580px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+
+  @include lg {
+   
+    max-width: 1200px;
+  }
+
+  @include md {
+   
+    margin: 0px 20px;
+  }
+
+  @include sm {
+  
+    margin: 10px;
+  }
+}

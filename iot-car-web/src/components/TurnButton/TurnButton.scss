@@ -1,0 +1,50 @@
+.turnContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.triangleButton {
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+
+  &.active {
+    transform: scale(0.95);
+    background-color: rgba(0, 122, 255, 0.15);
+  }
+
+  &.stop.active {
+    background-color: rgba(231, 76, 60, 0.2);
+  }
+}
+
+.triangleLeft {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 40px solid #007aff;
+}
+
+.triangleRight {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 40px solid #007aff;
+}
+
+.square {
+  width: 55px;
+  height: 55px;
+  background-color: #e74c3c;
+  border-radius: 5px;
+}

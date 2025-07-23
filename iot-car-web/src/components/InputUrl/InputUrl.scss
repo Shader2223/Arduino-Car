@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  margin-bottom: 20px;
+
+  .input {
+    border: 1px solid black;
+    border-top: none;
+    border-right: none;
+    width: 250px;
+    padding: 8px 5px;
+  }
+}
