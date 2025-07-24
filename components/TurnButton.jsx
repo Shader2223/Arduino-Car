@@ -8,7 +8,7 @@ export default function TurnButton({ IP }) {
         control: status
       });
         const response1 = await axios.post(`http://${IP}/speed`, {
-        speed:50
+        speed:100
       }, {
         headers: {
           "Content-Type": "application/json"
